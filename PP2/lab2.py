@@ -2,6 +2,7 @@ a=0.0
 b=1.0
 
 def s(x, eps):
+    """Calculate S(x) using a recurrence relation with the given precision."""
     term=x/2
     total=0.0
     n=0
@@ -11,15 +12,17 @@ def s(x, eps):
         total+=term
         n+=1
         term*=-(n*n*x2)/((2*n+1)*(2*n+2))
-    total+=eps
+    total+=term
     return total
 def _domaincheck(x):
-    return x>=a, x<=b
+    """Check whether x belongs to the domain of the function."""
+    return x>=a and x<=b
 def _main():
+    """Read and validate input, calculate the result and display it."""
     print("Created by Matvii Bobrovnitskyi K-13")
     print("Task 117. Calculate S(x) ")
     print(f"Domain: [{a},{b}]")
-    valid=true
+    valid=True
     stage=1
     try:
         x=float(input("Enter x(from 0 to 1): "))
@@ -32,7 +35,7 @@ def _main():
             stage=3
             eps=float(input("Enter eps(>0): "))
             stage=4
-            if eps<0 or eps>=float("inf"):
+            if eps<=0 or eps>=float("inf"):
                 print("eps not in domain")
                 valid = False
     except KeyboardInterrupt:
@@ -56,5 +59,5 @@ def _main():
         print(f"for x = {x:.7E}")
         print(f"for eps = {eps:.8E}")
         print(f"result = {result:.8f}")
-    _main()
+_main()
 
