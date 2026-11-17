@@ -1,5 +1,5 @@
-a=0.0
-b=1.0
+A=0.0
+B=1.0
 
 def s(x, eps):
     """Calculate S(x) using a recurrence relation with the given precision."""
