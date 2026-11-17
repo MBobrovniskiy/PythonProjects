@@ -16,12 +16,12 @@ def s(x, eps):
     return total
 def _domaincheck(x):
     """Check whether x belongs to the domain of the function."""
-    return x>=a and x<=b
+    return x>=A and x<=B
 def _main():
     """Read and validate input, calculate the result and display it."""
     print("Created by Matvii Bobrovnitskyi K-13")
     print("Task 117. Calculate S(x) ")
-    print(f"Domain: [{a},{b}]")
+    print(f"Domain: [{A},{B}]")
     valid=True
     stage=1
     try:
